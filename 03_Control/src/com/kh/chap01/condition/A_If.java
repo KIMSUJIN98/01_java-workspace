@@ -152,7 +152,7 @@ public class A_If {
 		System.out.println(result);
 		
 		/*
-		 * 아래의 경우 변수 result의 충족 범위가 올바르지 않아 출력이 안됨.
+		 * 아래의 경우 변수 result의 충족 범위가 올바르지 않아 출력이 안됨!
 		 * 
 		if(age <= 13) {
 			String result = "어린이";
