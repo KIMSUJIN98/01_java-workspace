@@ -2,7 +2,7 @@ package com.kh.test;
 
 public class Test {
 	public void method1() {
-		
+		System.out.println("안녕하세요");
 	}
 
 }
