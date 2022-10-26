@@ -186,5 +186,127 @@ public class A_For {
 		// 1부터 n까지의 합 : xxx
 		System.out.println("1부터 " + num + "까지의 합 : " + sum);
 	}
-
+	
+	
+	public void method8() {
+		// 1에서부터 어떤 랜덤값(1~10 사이의 랜덤값) 까지의 총 합계
+		
+		// 자바에서 제공하고 있는 클래스 (Math)
+		
+		/*
+		 * java.lang.Math 클래스에서 제공하는 random() 메소드를 호출해서
+		 * 매번 다른 랜덤값을 얻어 낼 수 있음!!
+		 * Math.random(); 이런식으로 호출 => 0.0 ~ 0.999999... 사이의 랜덤값 발생
+		 * 								(0.0 <=		< 1.0)
+		 */
+		
+		// int random = Math.random(); // double형이라서 안됨
+		//				0.0 ~ 1.0	0.0 ~ 0.999999
+		//int random = Math.random() * 10;
+		//				0.0 ~ 10.0	0.0 ~ 9.99999
+		//int random = Math.random()*10 +1;
+		//				1.0 ~ 11.0	1.0 ~ 10.99999
+		int random = (int)(Math.random()*10 +1);
+		//				1 <=	< 11 => 1~10
+		System.out.println("1~10 사이의 랜덤값 : " + random);
+		
+		int sum = 0;
+		for(int i =1; i<=random; i++) {
+			sum += i;
+		}
+		// 1부터 n까지의 합계
+		System.out.println("1부터 " + random + "까지의 합 : " + sum);
+	}
+	
+	
+	public void method9() {
+		String str = "Hello";
+		
+		// 각 인덱스별 문자를 뽑아서 출력
+		/*
+		 * H	=> str.charAt(0); 출력
+		 * e	=> str.charAt(1); 출력
+		 * l	=> str.charAt(2); 출력
+		 * l	=> str.charAt(3); 출력
+		 * o	=> str.charAt(4); 출력
+		 * 
+		 * 0번 인덱스부터 4번인덱스(마지막 인덱스) 까지 매번 1씩 증가하면서 반복 수행
+		 */
+		
+		for(int i =0; i<=4; i++) {
+			System.out.println(str.charAt(i));
+		}
+		
+	}
+	
+	
+	public void method10() {
+		// 사용자에게 문자열 입력 받아서 (str 변수에 대입)
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.print("문자열을 입력해주세요 : ");
+		String str = sc.nextLine();
+		
+		// 각 인덱스별 문자를 뽑아서 출력
+		
+		// apple의 길이 : 5글자
+		// 01234
+		
+		// strawberry : 10글자
+		// 0123456789
+		
+		// kiwi : 4글자
+		// 0123
+		
+		// 아하! 마지막 인덱스는 항상 (문자열의 길이 -1) 이구나....
+		// 추출하고자 하는 인덱스값이 (문자열의 길이 -1) 까지 매번 1씩 증가
+		System.out.println("문자열의 길이 : " + str.length());
+		
+		for(int i =0; i<str.length(); i++) { // i<=str.length()-1 에서 -1을 뺀 것과 같은 효과
+			System.out.println(str.charAt(i));
+		}
+	}
+	
+	
+	public void method11() {
+		// 구구단을 출력 : 입사시험에서 손코딩으로 보는 경우 종종 있음
+		// 2단 출력하기
+		
+		/*
+		 * 2 x 1 = 2
+		 * 2 x 2 = 4
+		 * 2 x 3 = 6
+		 * ...
+		 * 2 x 8 = 16
+		 * 2 x 9 = 18
+		 */
+		
+		for(int i =1; i<=9; i++) {
+			//System.out.println("2 x " + i + " = " + 2 * i);
+			System.out.printf("%d x %d = %d\n", 2, i, 2 * i);
+		}
+	}
+	
+	
+	public void method12() {
+		// 사용자에게 단을 입력 받아 구구단 출력
+		// int dan;
+		// 2~9 사이의 정수를 입력 => 가이드 문구
+		// 다른 숫자를 입력했을 경우 : 2~9 사이의 숫자를 입력해야됩니다. 잘못입력하셨습니다.
+		
+		Scanner sc = new Scanner(System.in);
+		System.out.print("단을 입력해주세요 : ");
+		int dan = sc.nextInt();
+		
+		if(dan >= 2 && dan <= 9) {
+			for(int i =1; i<10; i++) {
+				System.out.printf("%d x %d = %d\n", dan, i, dan * i);
+			}
+		}else {
+			System.out.println("2~9 사이의 숫자를 입력해야됩니다. 잘못입력하셨습니다.");
+			return;
+		}
+		sc.close();
+	}
+	
 }
