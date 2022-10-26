@@ -15,6 +15,10 @@ public class Run {
 		//cp.practice8();
 		//cp.practice9();
 		cp.practice10();
+		//cp.practice5_1();
+		//cp.practice8_1();
+		//cp.practice9_1();
+		//cp.practice9_2();
 
 	}
 

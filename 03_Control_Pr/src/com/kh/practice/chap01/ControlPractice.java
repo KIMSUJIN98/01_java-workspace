@@ -122,6 +122,7 @@ public class ControlPractice {
 	}
 	
 	
+	/* 초기 코드
 	public void practice5() {
 		Scanner sc = new Scanner(System.in);
 		
@@ -130,7 +131,7 @@ public class ControlPractice {
 		System.out.print("비밀번호 : ");
 		String pw = sc.nextLine();
 		
-		if(id.equals("myId")) {
+		if(id.equals("myId")) { // 하드코드 : 변수선언 없이 직접 비교 => 비추천
 			if(pw.equals("myPassword12")) {
 				System.out.println("로그인 성공");
 			}else {
@@ -141,6 +142,32 @@ public class ControlPractice {
 		}
 		sc.close();
 	}
+	*/
+	
+	
+	// 강사님 코드
+	public void practice5_1() {
+		Scanner sc = new Scanner(System.in);
+		
+		String userId = "myId"; //가입된 아이디
+		String userPwd = "myPassword12"; //가입된 비밀번호
+		
+		System.out.print("아이디 : ");
+		String id = sc.nextLine(); //현재 입력한 아이디
+		
+		System.out.print("비밀번호 : ");
+		String pwd = sc.nextLine(); //현재 입력한 비밀번호
+		
+		if(id.equals(userId) && pwd.equals(userPwd)) { //String형은 (id == userId)처럼 변수로 직접 선언할 경우 문법적 오류는 없지만 .equals()선언과 같은 올바른 출력이 나오지 않는다
+			System.out.println("로그인 성공");
+		}else if(id.equals(userId) && !(pwd.equals(userPwd))) {
+			System.out.println("비밀번호 틀렸습니다.");
+		}else if(!(id.equals(userId)) && pwd.equals(userPwd)) { // 아이디와 비밀번호 모두 틀린경우는 문제에서 지정해주지 않았음 => 출력없음
+			System.out.println("아이디가 틀렸습니다.");
+		}
+		
+	}
+	
 	
 	
 	public void practice6() {
@@ -233,6 +260,39 @@ public class ControlPractice {
 	}
 	
 	
+	/* 강사님 코드 : int형으로 출력하기
+	public void practice8_1() {
+		Scanner sc = new Scanner(System.in);
+		System.out.print("피연산자1 입력 : ");
+		int num1 = sc.nextInt();
+		
+		System.out.print("피연산자2 입력 : ");
+		int num2 = sc.nextInt();
+		sc.nextLine();
+		
+		System.out.print("연산자를 입력 : (+,-,*,/,%) ");
+		char op = sc.nextLine().charAt(0);
+		
+		int result = 0;
+		if((num1 > 0) && (num2 > 0)) {
+			switch(op) {
+			case '+' : result = (num1 + num2); break;
+			case '-' : result = (num1 - num2); break;
+			case '*' : result = (num1 * num2); break;
+			case '/' : result = (num1 / num2); break;
+			case '%' : result = (num1 % num2); break;
+			default : System.out.println("잘못 입력하셨습니다. 프로그램을 종료합니다."); return;
+			}
+			System.out.printf("%d %c %d = %d\n", num1, op, num2, result);
+		}else {
+			System.out.println("잘못 입력하셨습니다. 프로그램을 종료합니다.");
+		}
+		
+	}
+	*/
+	
+	
+	/* 초기 코드
 	public void practice9() {
 		Scanner sc = new Scanner(System.in);
 		
@@ -270,6 +330,87 @@ public class ControlPractice {
 		
 		sc.close();
 	}
+	*/
+	
+	
+	/* 강사님 코드
+	public void practice9_1() {
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.print("중간 고사 점수 : ");
+		double mScore = sc.nextDouble();
+		System.out.print("기말 고사 점수 : ");
+		double fScore = sc.nextDouble();
+		System.out.print("과제 점수 : ");
+		double hScore = sc.nextDouble();
+		System.out.print("출석 점수 : ");
+		double aScore = sc.nextDouble();
+		
+		if(aScore <= 14) {
+			System.out.println("================= 결과 =================");
+			System.out.println("Fail [출석 회수 부족 (" + (int)aScore + "/20) ]");
+			return;
+		}
+		
+		System.out.println("================= 결과 =================");
+		System.out.println("중간 고사 점수(20) : " + (mScore = mScore * 0.2));
+		System.out.println("기말 고사 점수(30) : " + (fScore = fScore * 0.3));
+		System.out.println("과제 점수(30) : " + (hScore = hScore * 0.3));
+		System.out.println("출석 점수(20) : " + aScore);
+			
+		double sumScore = mScore + fScore + hScore + aScore;
+			
+		System.out.println("총점 : " + sumScore);
+			
+		if(aScore > 14) {
+			if(sumScore >= 70) {
+				System.out.println("PASS");
+			}else {
+				System.out.println("Fail [점수미달]");
+			}
+				
+		}
+		
+	}
+	*/
+	
+	// 위를 참고하여 내가 수정한 코드
+	public void practice9_2() {
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.print("중간 고사 점수 : ");
+		double mScore = sc.nextDouble();
+		System.out.print("기말 고사 점수 : ");
+		double fScore = sc.nextDouble();
+		System.out.print("과제 점수 : ");
+		double hScore = sc.nextDouble();
+		System.out.print("출석 점수 : ");
+		double aScore = sc.nextDouble();
+		
+		System.out.println("================= 결과 =================");
+		if(aScore <= 14) {
+			System.out.println("Fail [출석 회수 부족 (" + (int)aScore + "/20) ]");
+			return;
+		}
+		
+		System.out.println("중간 고사 점수(20) : " + (mScore = mScore * 0.2));
+		System.out.println("기말 고사 점수(30) : " + (fScore = fScore * 0.3));
+		System.out.println("과제 점수(30) : " + (hScore = hScore * 0.3));
+		System.out.println("출석 점수(20) : " + aScore);
+			
+		double sumScore = mScore + fScore + hScore + aScore;
+			
+		System.out.println("총점 : " + sumScore);
+			
+		if(sumScore >= 70) {
+			System.out.println("PASS");
+		}else {
+			System.out.println("Fail [점수미달]");
+		}
+				
+	}
+	
+	
 	
 	public void practice10() {
 		Scanner sc = new Scanner(System.in);
@@ -301,7 +442,7 @@ public class ControlPractice {
 			practice4();
 			break;
 		case 5 :
-			practice5();
+			practice5_1();
 			break;
 		case 6 :
 			practice6();
@@ -313,11 +454,11 @@ public class ControlPractice {
 			practice8();
 			break;
 		case 9 :
-			practice9();
+			practice9_2();
 			break;
 		default:
-			System.out.println("입력이 잘못되었습니다.");
-			break;
+			System.out.println("해당 메뉴는 존재하지 않습니다. 1~9 사이의 숫자를 입력해주세요.");
+			return;
 		}
 		sc.close();
 	}
