@@ -309,4 +309,91 @@ public class A_For {
 		sc.close();
 	}
 	
+	
+	public void method13() {
+		// 2부터 9까지의 랜덤값 발생시켜서 랜덤단 출력하기
+		int dan = (int)(Math.random() * 8 + 2); // 2가 시작 수, 시작 수로부터 몇개의 랜덤을 발생시킬래?
+		//			0.0 <=	< 1.0
+		//			0.0 <=	< 8.0  ( x8 )
+		//			2.0 <=	< 10.0 ( +2 )
+		//			2	<=	< 10 // 2~9
+		// 공식 : 곱하는 수 - 범위의 숫자 개수(2,3,4,5,6,7,8,9) / 더하는 수 - 시작 숫자
+		System.out.println("=== " + dan + "단 ===");
+		for(int i = 1; i<=9; i++) {
+			System.out.printf("%d x %d = %d\n", dan, i, dan * i);
+		}
+	}
+	
+	
+	// 중첩 for문
+	public void method14() {
+		// 1 2 3 4 5
+		// 1 2 3 4 5
+		// 1 2 3 4 5
+		for(int j = 1; j<=3; j++) { // 주로 j를 사용함
+			for(int i = 1; i<=5; i++) {
+				System.out.print(i + " ");
+			}
+			System.out.println();
+		}
+	}
+	
+	
+	public void method15() {
+		// ****
+		// ****
+		// ****
+		// ****
+		for(int j = 0; j<4; j++) {
+			for(int i = 0; i<4; i++) {
+				System.out.print("*");
+			}
+			System.out.println();
+		}
+	}
+	
+	
+	public void method16() {
+		// 1***
+		// *2**
+		// **3*
+		// ***4
+		
+		// 행 1~4 까지 반복 => 바깥쪽 for문
+		// 매 행 고정일때 열은 1~4 까지 반복 => 안쪽 for문
+		for(int j = 1; j<=4; j++) {
+			for(int i = 1; i<=4; i++) {
+				if(j == i) {
+					System.out.print(i); //j여도 상관없다
+				}else {
+					System.out.print("*");
+				}
+			}
+			System.out.println();
+		}
+	}
+	
+	
+	public void method17() {
+		// 2단부터 9단까지 다 출력
+		// === n단 ===
+		// 각 단의 출력이 끝나면 개행되도록 한다
+		
+		for(int dan = 2; dan<=9; dan++) {
+			System.out.println("=== " + dan + "단 ===");
+			for(int i = 1; i<=9; i++) {
+				System.out.printf("%d x %d = %d\n", dan, i, dan * i);
+			}
+			System.out.println();
+		}
+	}
+	
+	
+	public void method18() {
+		for(; ;) { // 조건식 자리 생략시 기본적으로 true => 무한반복문!!!!!
+			System.out.println("안녕");
+		}
+	}
+	
+	
 }
