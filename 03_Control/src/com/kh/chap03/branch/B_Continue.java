@@ -3,7 +3,7 @@ package com.kh.chap03.branch;
 public class B_Continue {
 	/*
 	 * 	 continue : 반복문 안에 기술되는 구문
-	 * 				continue; 구문 실행시 그 뒤의 구문을 실행하지 않고 곧바로 현재 속해있는 반복문 위로 올라감
+	 * 				continue; 구문 실행시 그 뒤의 구문을 실행하지 않고 곧바로 현재 속해있는 반복문 위로 올라감.
 	 */
 	
 	public void method1() {
@@ -38,7 +38,8 @@ public class B_Continue {
 	// ctrl + shift + f : 코드정렬
 	// alt + 방향기 : 코드이동
 	// ctrl + shift + r : 파일명으로 검색
-	// ctrl + h : 키워드 검색 파일서치
+	// ctrl + h : 키워드 검색 (파일서치)
+	
 	
 	public void method2() {
 		// 1. 1부터 100까지의 총합계
