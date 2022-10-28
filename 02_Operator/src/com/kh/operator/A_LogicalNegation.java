@@ -2,7 +2,7 @@ package com.kh.operator;
 
 public class A_LogicalNegation {
 	
-	public void method1() {
+	public void method1() { 
 		
 		/*
 		 * 논리 부정 연산자 (단항 연산자 == 하나의 값을 가지고 연산)
