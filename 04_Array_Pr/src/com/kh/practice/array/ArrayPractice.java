@@ -217,42 +217,66 @@ public class ArrayPractice {
 			System.out.print("정수 : ");
 			int num = sc.nextInt();
 			
-			if((num >= 3) && (num % 2 == 1)) {
+			if((num % 2 == 0) || (num < 3)) {
+				System.out.println("다시 입력하세요");
+			}else {
 				int[] arr = new int[num];
 				
-				for(int i =0; i<(arr.length/2); i++) {
-					System.out.print(arr[i] + " ");
-				}
-				for(int i = (arr.length/2); i == 0; i--) {
+				for(int i =0; i<arr.length; i++) {
+					if(i < arr.length/2) {
+						arr[i] = i + 1;
+					}else {
+						arr[i] = arr.length - i;
+					}
 					System.out.print(arr[i] + " ");
 				}
 				System.out.println();
 				return;
-			}else {
-				System.out.println("다시 입력하세요");
 			}
+			
 		}
-		
 	}
+
 	
 	public void practice9() {
 		Scanner sc = new Scanner(System.in);
 		System.out.print("치킨 이름을 입력하세요 : ");
 		String name = sc.nextLine();
-		
-		String[] arr = {"양념","불닭","간장","후라이드","뿌링클"};
-		
-		for(int i =0; i<arr.length; i++) {
-			if(arr[i].equals(name)) {
-				System.out.println(name + "치킨 배달 가능");
-				{
-					System.out.println(name + "치킨은 없는 메뉴입니다.");
-				}
-			
-			}
+
+		String[] arr = { "양념", "불닭", "간장", "후라이드", "뿌링클" };
+
+		if (arr[0].equals(name)) {
+			System.out.println(name + "치킨 배달 가능");
+		} else if (arr[1].equals(name)) {
+			System.out.println(name + "치킨 배달 가능");
+		} else if (arr[2].equals(name)) {
+			System.out.println(name + "치킨 배달 가능");
+		} else if (arr[3].equals(name)) {
+			System.out.println(name + "치킨 배달 가능");
+		} else if (arr[4].equals(name)) {
+			System.out.println(name + "치킨 배달 가능");
+		} else {
+			System.out.println(name + "치킨은 없는 메뉴입니다.");
 		}
 	}
 	
+	public void practice9_1() {
+		Scanner sc = new Scanner(System.in);
+		System.out.print("치킨 이름을 입력하세요 : ");
+		String name = sc.nextLine();
+
+		String[] arr = { "양념", "불닭", "간장", "후라이드", "뿌링클" };
+
+		for(int i =0; i<arr.length; i++) {
+			if(arr[i].equals(name)) {
+				System.out.println(arr[i] + "치킨 배달 가능");
+				return;
+			}	
+		}
+		System.out.println(name + "치킨은 없는 메뉴입니다.");
+		return;
+	}
+
 	
 	public void practice10() {
 		Scanner sc = new Scanner(System.in);
