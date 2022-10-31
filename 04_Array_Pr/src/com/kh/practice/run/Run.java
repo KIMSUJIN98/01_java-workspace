@@ -15,11 +15,17 @@ public class Run {
 		//ap.practice6();
 		//ap.practice6_1();
 		//ap.practice7();
-		ap.practice8();
+		//ap.practice8(); //
 		//ap.practice9();
 		//ap.practice9_1();
+		ap.practice9_2();
 		//ap.practice10();
 		//ap.practice10_1();
+		//ap.practice11();
+		//ap.practice12();
+		//ap.practice13(); //
+		//ap.practice14(); ??
+		//ap.practice15(); 수정중
 
 	}
 

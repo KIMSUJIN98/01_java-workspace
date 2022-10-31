@@ -276,8 +276,31 @@ public class ArrayPractice {
 		System.out.println(name + "치킨은 없는 메뉴입니다.");
 		return;
 	}
-
 	
+	
+	// 강사님 코드
+	public void practice9_2() {
+	      Scanner sc = new Scanner(System.in);
+	      // 배열 생성
+	      String[] chickens = { "황금올리브", "허니콤보", "뿌링클", "고추바사삭" };
+
+	      System.out.print("치킨 이름을 입력하세요 : ");
+	      String chicken = sc.nextLine();
+
+	      int count = 0;
+	      for (int i = 0; i < chickens.length; i++) {
+	         if (chicken.equals(chickens[i])) {
+	            count ++;
+	         }
+	      }
+	      if(count == 1) {
+	         System.out.println(chicken + "치킨 배달 가능");
+	      }else {
+	         System.out.println(chicken + "치킨 배달불가");
+	      }
+	   }
+	   
+
 	public void practice10() {
 		Scanner sc = new Scanner(System.in);
 		System.out.print("주민등록번호(-포함) : ");
@@ -325,5 +348,126 @@ public class ArrayPractice {
 			System.out.print(arrCopy[i]);
 		}
 	}
+	
+	
+	public void practice11() {
+		int[] arr = new int[10];
+		
+		for(int i =0; i<arr.length; i++) {
+			arr[i] = (int)(Math.random()*10 + 1);
+		}
+		
+		for(int i =0; i<arr.length; i++) {
+			System.out.print(arr[i] + " ");
+		}
+	}
+	
+	
+	public void practice12() {
+		int[] arr = new int[10];
+		
+		for(int i =0; i<arr.length; i++) {
+			arr[i] = (int)(Math.random()*10 + 1);
+		}
+		
+		int max = 1;
+		int min = 10;
+		for(int i =0; i<arr.length; i++) {
+			if(arr[i] >= max) {
+				max = arr[i];
+			}else if(arr[i] <= min){
+				min = arr[i];
+			}
+		}
+		
+		for(int i =0; i<arr.length; i++) {
+			System.out.print(arr[i] + " ");
+		}
+		System.out.println();
+		System.out.println("최대값 : " + max);
+		System.out.println("최소값 : " + min);
+		
+	}
+	
+	
+	public void practice13() {
+		int[] arr = new int[10];
+		
+		for(int i =0; i<arr.length; i++) {
+			arr[i] = (int)(Math.random()*10 + 1);
+			for(int j =0; j<i; j++) {
+				if(arr[i] == arr[j]) {
+					i--;
+				}
+			}
+		}
+		
+		for(int i =0; i<arr.length; i++) {
+			System.out.print(arr[i] + " ");
+		}
+		
+	}
+	
+	
+	public void practice14() {
+		int[] arr = new int[6];
+		
+		for(int i =0; i<arr.length; i++) {
+			arr[i] = (int)(Math.random()*100 + 1);
+			if (arr[i] < 1 || arr[i] > 45) {
+				i--;
+			}else {
+				for(int j =0; j<i; j++) {
+					if(arr[i] == arr[j]) {
+						i--;
+					}
+				}
+			}
+		}
+		
+		for(int i =0; i<arr.length; i++) {
+			System.out.print(arr[i] + " ");
+		}
+	}
+	
+	
+	public void practice15() {
+		Scanner sc = new Scanner(System.in);
+		System.out.print("문자열 : ");
+		String str = sc.nextLine();
+		
+		char[] ch = str.toCharArray();
+		System.out.print("문자열에 있는 문자 : ");
+		
+		int count = 0;
+		for(int i =0; i<str.length(); i++) {
+			for(int j =0; j<i; j++) {
+				if(ch[i]==ch[j]) {
+					
+					System.out.print(ch[i]);
+					count++;
+					if(i<str.length()-1) {
+						System.out.print(", ");
+					}
+				}
+			}
+		}
+		System.out.println();
+		System.out.println("문자 개수 : " + count);
+		
+	}
+	
+	/*
+	public void practice15_1() {
+		Scanner sc = new Scanner(System.in);
+		System.out.print("문자열 : ");
+		String str = sc.nextLine();
+		
+		for(int i =0; i<str.length(); i++) {
+			char[] ch = new char[str.length()];
+			ch = str.charAt(i);
+		}
+	}
+	*/
 	
 }
