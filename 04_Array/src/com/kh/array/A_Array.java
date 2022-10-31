@@ -397,6 +397,48 @@ public class A_Array {
 		
 	}
 	
+	
+	public void remind() {
+		/*
+		 * 변수만을 가지고 프로그래밍 했을 경우
+		
+		int age1 = 15;
+		int age2 = 23;
+		int age3 = 50;
+		int age4 = 34;
+		int age5 = 25;
+		
+		System.out.println(age1);
+		
+		// 반복문 사용 불가
+		for(int i=1; i<6; i++) {
+			System.out.println(agei); // agei 라는 이름의 변수를 찾고있음
+			System.out.println(age + i); // age 라는 이름의 변수를 찾고있음
+		}
+		*/
+		
+		// 배열 가지고 프로그래밍
+		int[] ages = new int[5];
+		
+		ages[0] = 15;
+		ages[1] = 23;
+		ages[2] = 50;
+		ages[3] = 34;
+		ages[4] = 25;
+		
+		// 인덱스 값 출력
+		int sum = 0;
+		for(int i =0; i<ages.length; i++) {
+			System.out.println(ages[i]);
+			// 누적합 공식
+			sum += ages[i];
+			
+		}
+		System.out.println("총 나이의 합 : " + sum);
+		
+		
+	}
+	
 
 	
 	
