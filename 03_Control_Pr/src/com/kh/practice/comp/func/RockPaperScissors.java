@@ -31,7 +31,7 @@ public class RockPaperScissors {
 			
 			String com = "";
 			
-			int random = (int)(Math.random()*3 + 1);
+			int random = (int)(Math.random()*3 + 1); // 랜덤 *갯수 + 시작수 ; 0 1 2의 경우 : random()*3 + 0
 			switch(random) {
 			case 1:
 				com = "가위";
