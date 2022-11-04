@@ -1,6 +1,7 @@
 package com.kh.chap02_encapsulation.run;
 
 import com.kh.chap02_encapsulation.model.vo.Student;
+import com.kh.chap03_class.model.vo.Person;
 
 public class EncapsulationRun {
 	
@@ -53,6 +54,17 @@ public class EncapsulationRun {
 		System.out.println("=== 수정후 ===");
 		System.out.println(woo.getAge());
 		
+		
+		System.out.println();
+		System.out.println("=== 생성자 만들고 난 후 ===");
+		System.out.println();
+		Student per = new Student();
+		System.out.println(per.information());
+		System.out.println();
+		Student per1 = new Student("김수진", 170.2, 98);
+		System.out.println(per1.information1());
+		Student per2 = new Student("김수진", 25, 170.2, 98, 95);
+		System.out.println(per2.information());
 
 	}
 

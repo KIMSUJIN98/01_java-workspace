@@ -11,6 +11,34 @@ public class Person {
 	private String phone;
 	private String email;
 	
+	
+	//기본생성자
+	public Person() {
+		System.out.println("Person 객체가 생성됐습니다.");
+	}
+	
+	
+	//생성자(이름, 비밀번호, 나이, 휴대폰번호)만을 받는 매개변수 생성자
+	public Person(String name, String pwd, int age, String phone) {
+		this.name = name;
+		this.pwd = pwd;
+		this.age = age;
+		this.phone = phone;
+	}
+	
+	
+	//생성자(전체필드) 생성자
+	public Person(String id, String pwd, String name, int age, char gender, String phone, String email) {
+		this.id = id;
+		this.pwd = pwd;
+		this.name = name;
+		this.age = age;
+		this.gender = gender;
+		this.phone = phone;
+		this.email = email;
+	}
+	
+	
 	//setter 만들기!! => 7개
 	public void setId(String id) {
 		this.id = id;
@@ -69,5 +97,16 @@ public class Person {
 	public String getEmail() {
 		return email;
 	}
+	
+	
+	public String information() {
+		return "id : " + id + ", pwd : " + pwd + ", name : " + name + ", age : " + age + ", gender : " + gender + ", phone : " + phone + ", email : " + email;
+	}
+	
+	
+	public String information1() {
+		return "name : " + name + ", pwd : " + pwd + ", age : " + age + ", phone : " + phone;
+	}
+	
 
 }
