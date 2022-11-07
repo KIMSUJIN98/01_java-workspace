@@ -3,6 +3,7 @@ package com.kh.chap06_method.run;
 import java.util.Scanner;
 
 import com.kh.chap06_method.controller.NonStaticMethod;
+import com.kh.chap06_method.controller.OverloadingTest;
 import com.kh.chap06_method.controller.StaticMethod;
 
 public class MethodRun {
@@ -69,6 +70,20 @@ public class MethodRun {
 		System.out.println(StaticMethod.method2()); // return 값은 출력하지 않으면 보이지 않는다.
 		StaticMethod.method3("차은우");
 		System.out.println(StaticMethod.method4("apple", "kiwi")); // return 값은 출력하지 않으면 보이지 않는다.
+		
+		
+		// ----- OverloadingTest -----
+		OverloadingTest ot = new OverloadingTest();
+		ot.test();
+		ot.test(10);
+		ot.test(10, "김수진");
+		ot.test("장원영", 11);
+		ot.test("ㅎㅅㅎ");
+		
+		// 오버로딩의 대표적인 예 => print()
+		System.out.println(10);
+		System.out.println("ㄴㄴ");
+		System.out.println(0.0);
 	}
 	
 }
