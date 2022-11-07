@@ -11,7 +11,7 @@ public class Student { // 나만의 자료형
 	private int mathScore;
 	
 	
-	// 생성부 선언
+	// 생성부 선언 : 관례적으로 기본생성자부터 매개변수가 적은 순으로 작성해야 한다.
 	// 기본생성자
 	public Student() {
 		System.out.println("Student 객체가 생성됐습니다.");
@@ -28,10 +28,14 @@ public class Student { // 나만의 자료형
 	
 	// 생성자(전체필드) 생성자
 	public Student(String name, int age, double height, int korScore, int mathScore) {
+		this(name, height, korScore);
+		/*
+		 * 중복된 내용은 this() 생성자를 활용하여 처리한다
 		this.name = name;
-		this.age = age;
 		this.height = height;
 		this.korScore = korScore;
+		*/
+		this.age = age;
 		this.mathScore = mathScore;
 	}
 	
@@ -74,7 +78,7 @@ public class Student { // 나만의 자료형
 	}
 	
 	public void setAge(int age) {
-		this.age = age;
+		this.age = age; // 직접접근
 	}
 	
 	public void setHeight(double height) {
@@ -112,7 +116,7 @@ public class Student { // 나만의 자료형
 		return mathScore;
 	}
 	
-	public String information1() {
+	public String information1() { // 관례적으로 내가 만든 메소드는 제일 아래 부분에 작성해준다.
 		return "name : " + name + ", height : " + height + ", korScore : " + korScore;
 	}
 	
