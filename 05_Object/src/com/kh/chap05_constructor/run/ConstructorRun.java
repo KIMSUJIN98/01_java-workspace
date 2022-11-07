@@ -7,6 +7,7 @@ public class ConstructorRun {
 	public static void main(String[] args) {
 
 		User u1 = new User(); // 여태까지 생성자를 별도로 작성하지 않아도 JVM이 기본 생성자(매개변수 생성자는 아님)를 자동으로 만들어주고 있었음
+		// 매개변수 생성자가 하나라도 있는 경우, JVM이 자동으로 기본생성자를 만들지 않기에 에러발생 : 기본생성자 없이 매개변수 생성자만 만들 경우 에러 발생
 		System.out.println(u1.information());
 		
 		// 각 필드에 JVM의 초기값이 담겨 있음!!
