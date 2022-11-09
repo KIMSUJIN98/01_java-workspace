@@ -79,7 +79,10 @@ public class AbstractionRun {
 	 *
 	 *
 	 */
+	
+	
 
+	/*
 	public static void main(String[] args) {
 		
 		// 클래스(틀) 만든 후 학생 객체 만들어보기
@@ -117,8 +120,43 @@ public class AbstractionRun {
 		 * => 필드에 직접적으로 접근해서 값 대입하거나 값을 가져올 수 있음!!
 		 * => 외부에서 함부로 값을 변질시키거나 조회권한이 없는 사람이 가져올 수 있는 문제 발생!!
 		 * 	>> 캡슐화 작업을 할꺼임!!
-		 */
+		 
 
+		
+	}
+	*/
+	
+	
+	
+	// 객체 배열을 이용한 방법 (22.11.08.추가)
+	public static void main(String[] args) {
+		
+		// 객체 배열의 크기를 2로 할당
+		Student[] s = new Student[2];
+		
+		// 기본생성자 사용
+		s[0] = new Student();
+		
+		// 매개변수 생성자 사용
+		s[1] = new Student("이준호", 21, 173.4);
+		
+		// 출력확인
+		for(int i =0; i<s.length; i++) {
+			System.out.println(s[i].information());
+		}
+		
+		// 구분선
+		System.out.println("====================================");
+		
+		// 값이 없는 필드에 각각 값을 대입
+		s[0].setName("우영우");
+		s[0].setAge(20);
+		s[0].setHeight(162.3);
+		
+		// 최종 출력확인
+		for(int i =0; i<s.length; i++) {
+			System.out.println(s[i].information());
+		}
 		
 	}
 

@@ -9,7 +9,7 @@ public class Run {
 		// 객체 배열을 크기 3으로 할당 한 뒤
 		Employee[] emp = new Employee[3];
 		
-		// 0번 인덱스에는 기본생성자를 통해서 객체 생성
+		// 0번 인덱스에는 기본생성자를 통해서 객체 생성(new)
 		emp[0] = new Employee();
 		
 		// 1번 인덱스에는 매개변수 6개짜리 생성자를 이용해서 객체 생성
@@ -44,14 +44,14 @@ public class Run {
 		emp[1].setSalary(400_0000);
 		emp[1].setBonusPoint(0.3);
 
-		System.out.println("emp[0] : " + emp[0].information());
-		System.out.println("emp[1] : " + emp[1].information());
+		//System.out.println("emp[0] : " + emp[0].information());
+		//System.out.println("emp[1] : " + emp[1].information());
 		
-		/*
 		for(int i =0; i<emp.length-1; i++) {
 			System.out.println("emp[" + i + "] : " + emp[i].information());
 		}
-		*/
+		
+		
 		
 		System.out.println("==============================================================");
 		
