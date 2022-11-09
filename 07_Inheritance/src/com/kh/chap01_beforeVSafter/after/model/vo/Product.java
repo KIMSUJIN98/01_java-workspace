@@ -49,7 +49,7 @@ public class Product {
 		this.price = price;
 	}
 	
-	public String information() {
+	public String information() { 			// 부모클래스의 information
 		return "brand : " + brand + ", pCode : " + pCode + ", pName : " + pName + ", price : " + price;
 	}
 	
