@@ -1,4 +1,4 @@
-package com.kh.chap01_poly.model.vo;
+package com.kh.chap01_poly.part01_basic.model.vo;
 
 public class Child1 extends Parent {
 	private int z;
