@@ -29,16 +29,17 @@ public class TokenController {
 	}
 	
 	
-	public int findChar(String input, char one) { 
-	      
-	      int count = 0;
-	      for(int i=0 ; i<input.length(); i++) {
-	         if(input.charAt(i) == one) {
-	            count++;
-	         }
-	      }
-	      return count;
-	   }
+	public int findChar(String input, char one) {
 
-
+		int count = 0;
+		for (int i = 0; i < input.length(); i++) {
+			if (input.charAt(i) == one) {
+				count++;
+			}
+		}
+		return count;
+	}
+	
+	
+	
 }
