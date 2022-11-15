@@ -12,7 +12,7 @@ public class TokenController {
 	public String afterToken(String str) {
 		
 		// 매개변수로 받아온 str을 StringTokenizer를 이용하여 띄어쓰기를 없애고
-		StringTokenizer stn = new StringTokenizer(str, " ");			// str이 공백을 기준으로 하나씩 나누어져 토근에 담긴다.
+		StringTokenizer stn = new StringTokenizer(str, " ");			// str이 공백을 기준으로 하나씩 나누어져 토큰에 담긴다.
 		
 		/*
 		String stn1 = "";
