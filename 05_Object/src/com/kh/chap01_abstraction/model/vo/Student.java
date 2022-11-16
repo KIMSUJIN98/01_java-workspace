@@ -1,4 +1,4 @@
-package com.kh.chap01_abstraction.model.vo;
+package com.kh.chap01_abstraction.model.vo; 	// vo (Value Object)
 
 /*
  * * 클래스의 구조
