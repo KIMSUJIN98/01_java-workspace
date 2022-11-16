@@ -1,5 +1,7 @@
 package com.kh.chap03_char.model.dao;
 
+import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 
@@ -48,6 +50,39 @@ public class FileCharDao {
 			}
 		}
 		
+		
+	}
+	// 프로그램 <---- 파일(입력)
+	public void fileRead() {
+		
+		
+		// FileReader : 파일로부터 데이터를 2바이트 단위로 입력받을 수 있는 스트림
+		FileReader fr = null;
+		try {
+			// 1. FileReader 객체 생성
+			fr = new FileReader("b_char.txt"); // 여기서는 알아서 만들어지는게 아님
+			
+			// 2. read 메소드 이용해서 읽어들이자 (정수값)
+			// 파일의 끝을 만나는 순간 -1 출력
+			
+			int value = 0;
+			while((value = fr.read()) != -1) {
+				//System.out.println(value);																				// 콘솔창에는 숫자(아스키코드)가 출력된다.
+				System.out.print((char)value);																				// 형변환을 통해 숫자를 문자 형태로 출력한다.
+			}
+			
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}finally {
+			try {
+				// 3. 스트림 반납
+				fr.close();
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+		}
 		
 	}
 }
