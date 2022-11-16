@@ -24,15 +24,15 @@ public class FileCharDao {
 		
 		try {
 			// 1. FileWriter 객체 생성
-			fw = new FileWriter("b_char.txt"); // 해당 파일이 없으면 새로 만들고 연결 / 있으면 그냥 연결
+			fw = new FileWriter("b_char.txt"/*, true*/); // 해당 파일이 없으면 새로 만들고 연결 / 있으면 그냥 연결						// fw = new FileWriter("b_char.txt", true); 일 경우 기존의 데이터에 이어져서 작성된다. 기본값은 false. 
 			
 			// 2. write 메소드를 이용해서 데이터 출력
 			//	  2byte 단위로 데이터 전송
 			
-			fw.write("와! IO 재밌다...ㅎ");															// '와', '!', ' ', ... 이런식으로 2바이트 단위로 들어간다
-			fw.write(' ');																		// 공백
+			fw.write("와! IO 재밌다...ㅎ");																					// '와', '!', ' ', ... 이런식으로 2바이트 단위로 들어간다
+			fw.write(' ');																								// 공백
 			fw.write('A');
-			fw.write("\n");																		// 개행
+			fw.write("\n");																								// 개행
 			
 			char[] arr = {'a', 'p', 'p', 'l', 'e'};
 			fw.write(arr);
