@@ -1,6 +1,9 @@
 package com.kh.chap04_assist.part01_buffer.model.dao;
 
+import java.io.BufferedReader;
 import java.io.BufferedWriter;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 
@@ -78,5 +81,37 @@ public class BufferDao {
 		
 		
 	}
+	// 프로그램 <----- 파일 (입력)
+	public void fileRead() {
+		// FileReader : 파일과 연결해서 2바이트 단위로 데이터를 입력받을 수 있는 기반스트림
+		// BufferedReader : 속도 향상에 도움이 되는 보조 스트림
+		
+		try(BufferedReader br = new BufferedReader(new FileReader("c_buffer.txt"))){
+			//br.read();
+			//br.readLine(); 																	// 한줄 단위로 읽는다. (형변환 하지 않아도 문자 그대로를 출력한다)
+			
+			/*
+			System.out.println(br.readLine()); 													// 안녕하세요
+			System.out.println(br.readLine()); 													// 반갑습니다.
+			System.out.println(br.readLine());													// 저리가세요
+			
+			System.out.println(br.readLine()); // 파일의 끝을 만나면 null이 나옴						// null
+			System.out.println(br.readLine());													// null
+			*/
+			
+			String value = null; 																// br.readLine() 함수의 반환형이 String이므로 int를 사용하면 안됨
+			while((value = br.readLine()) != null) { // null 비교시에는 equals 안써도됨! != ==
+				System.out.println(value);
+			}
+			
+		} catch (FileNotFoundException e) { // 자식 => 위에 있어야한다. 없어도 상관 없음 					// 자식의 에러는 부모보다 위에 있어야 캐치가 가능하다. FileNotFoundException의 부모는 IOException이다. 부모인 IOException이 다 받아주므로 없어도 상관없다. FileNotFoundException이 아래에 위치하면 unreached 에러가 발생한다.
+			e.printStackTrace();
+		} catch (IOException e) { // 부모
+			e.printStackTrace();
+		}
+	}
+	
+	
+	
 
 }

@@ -1,5 +1,7 @@
 package com.kh.chap02_inherit.run;
 
+import java.util.ArrayList;
+
 import com.kh.chap02_inherit.model.vo.Airplane;
 import com.kh.chap02_inherit.model.vo.Car;
 import com.kh.chap02_inherit.model.vo.Ship;
@@ -22,6 +24,32 @@ public class InheritRun /*extends Object*/ {
 		c.howToMove();
 		s.howToMove();
 		a.howToMove();
+		
+		System.out.println("======================================== 2022.11.17 추가사항 : Collection ========");
+		
+		ArrayList<Vehicle> list = new ArrayList<Vehicle>();			// new 뒤 <Vehicle>의 Vehicle은 생략가능
+		
+		list.add(new Car("벤틀리", 12.5, "세단", 4)); 					// 현재 제네릭은 Vehicle. 자식이라 형변환 없이 가져올 수 있다.
+		list.add(new Ship("낚시배", 3, "어선", 1));
+		list.add(new Airplane("종이비행기", 0.01, "제트기", 10, 4));
+		
+		// 1. 단순 for문(for loop문)
+		for(int i=0; i<list.size(); i++) {
+			System.out.println(list.get(i).information());
+			list.get(i).howToMove();
+		}
+		
+		
+		// 2. 향상된 for문
+		for(Vehicle v : list) { // v= list.get(0) => list.get(1)
+			System.out.println(v.information());
+			v.howToMove();
+		}
+		
+		
+		System.out.println("======================================== 2022.11.17 추가사항 : Collection FIN ========");
+		
+		
 		
 		/*
 		 * * 상속의 장점

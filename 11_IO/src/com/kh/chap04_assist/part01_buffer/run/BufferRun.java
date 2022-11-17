@@ -6,7 +6,8 @@ public class BufferRun {
 
 	public static void main(String[] args) {
 		BufferDao dao = new BufferDao();
-		dao.fileSave();
+		//dao.fileSave();
+		dao.fileRead();
 	}
 
 }
