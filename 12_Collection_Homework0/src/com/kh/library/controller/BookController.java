@@ -12,55 +12,107 @@ public class BookController implements BookManager {
 	
 	@Override
 	public void addBook(Book nBook) {
+		for(Book b : bList) {
+			if(b.getbNo().equals(nBook.getbNo())) {
+				System.out.println("도서명 : " + nBook.getTitle() + "도서는 이미 소장하고 있습니다.");
+				return;
+			}
+		}
 		bList.add(nBook);
+		System.out.println("도서명 : " + nBook.getTitle() + "도서가 성공적으로 추가됐습니다.");
 	}
 
 	@Override
 	public ArrayList<Book> getAllBook() {
-		// TODO Auto-generated method stub
-		return null;
+		return bList;
 	}
 
 	@Override
 	public Book searchBookBybNo(String bNo) {
-		// TODO Auto-generated method stub
-		return null;
+		Book search = new Book();
+	
+		for(Book b : bList) {
+			if(b.getbNo().equals(bNo)) {
+				search = b;
+			}
+		}
+		return search;
 	}
 
 	@Override
 	public ArrayList<Book> searchBookByTitle(String title) {
-		// TODO Auto-generated method stub
-		return null;
+		ArrayList<Book> searchList = new ArrayList<>();
+		
+		for(Book b : bList) {
+			if(b.getTitle().contains(title)) {
+				searchList.add(b);
+			}
+		}
+		return searchList;
 	}
 
 	@Override
 	public ArrayList<Book> onlySearchBook() {
-		// TODO Auto-generated method stub
-		return null;
+		ArrayList<Book> bookList = new ArrayList<>();
+		
+		for(Book b : bList) {
+			if(b instanceof Magazine) {
+				continue;
+			}else {
+				bookList.add(b);
+			}
+		}
+		return bookList;
 	}
 
 	@Override
 	public ArrayList<Book> onlySearchMagazine() {
-		// TODO Auto-generated method stub
-		return null;
+		ArrayList<Book> magazineList = new ArrayList<>();
+		
+		for(Book b : bList) {
+			if(b instanceof Magazine) {
+				magazineList.add(b);
+			}
+		}
+		return magazineList;
 	}
 
 	@Override
 	public ArrayList<Book> magazineOfThisYearInfo(int year) {
-		// TODO Auto-generated method stub
-		return null;
+		ArrayList<Book> mList = new ArrayList<>();
+		
+		for(Book b : bList) {
+			if(b instanceof Magazine) {
+				if(((Magazine) b).getYear() == year) {
+					mList.add(b);
+				}
+			}
+		}
+		return mList;
 	}
 
 	@Override
 	public ArrayList<Book> searchBookByPublisher(String publisher) {
-		// TODO Auto-generated method stub
-		return null;
+		ArrayList<Book> pubList = new ArrayList<>();
+		
+		for(Book b : bList) {
+			if(b.getPublisher().contains(publisher)) {
+				pubList.add(b);
+			}
+		}
+		return pubList;
 	}
 
 	@Override
 	public ArrayList<Book> searchBookByPrice(int price) {
-		// TODO Auto-generated method stub
-		return null;
+		ArrayList<Book> pList = new ArrayList<>();
+		
+		for(Book b : bList) {
+			if(b.getPrice() <= price) {
+				pList.add(b);
+			}
+		}
+		return pList;
 	}
 
 	@Override
