@@ -28,100 +28,50 @@ public class LibraryRun {
 
 	public static void printBooks(ArrayList<Book> bs) {
 		// 여기서 메뉴열고 구현 시작
+		
 		BookController bc = new BookController();
 		
-		// bc.addBook(bs);
-		// bc.addBook(북객체); => 하나씩 하나씩 for문으로 넣어 어레이리스트를 만들자!!
-		
-		// bs => bList
-		for(Book b : bs) { // b = bList.get(0) / 1 2 3 4
-			bc.addBook(b); // 하나씩 하나씩 for문으로 넣어 어레이리스트를 만들자!!
-			System.out.println(b); // 시작하자마자 전체가 쫙 출력되도록 한다
+		for(Book b : bs) {
+			bc.addBook(b);
+			System.out.println(b);
 		}
 		
-		
 		boolean flag = true;
-		
-		while(flag == true) {
-			System.out.println("============================");
+		while(flag = true) {
+			System.out.println("=============================================");
 			System.out.println("KH 우리반전용 도서관 관리 페이지입니다.");
 			System.out.println("1. 조회하기");
 			System.out.println("2. 추가하기");
 			System.out.println("3. 책 찾기");
-			System.out.println("4. 전체 책 가격 합계 및 평균 조회");
+			System.out.println("4. 전체책 가격 합계 및 평균 조회");
 			System.out.println("5. 프로그램 종료");
-			System.out.println("============================");
+			System.out.println("=============================================");
 			
 			Scanner sc = new Scanner(System.in);
-			
 			System.out.print("메뉴번호를 입력해주세요 : ");
 			int menu = sc.nextInt();
-			//sc.nextLine();
-			System.out.println("============================");
 			
 			switch(menu) {
-			case 1:		// 1. 조회하기
-				System.out.println("어떤 방법으로 책을 조회하겠습니까?");
-				System.out.println("1. 도서관 전체 소장책 조회하기");
-				System.out.println("2. 일반도서만 조회하기(잡지 제외)");
-				System.out.println("3. 잡지만 조회하기(일반도서 제외)");
-				System.out.println("4. 이전으로");
-				System.out.println("============================");
-				
-				System.out.print("메뉴번호를 입력해주세요 : ");
-				int search = sc.nextInt();
-				//sc.nextLine();
-				
-				if (search == 1) {
-					System.out.println(bc.getAllBook());
-				}else if(search == 2) {
-					System.out.println(bc.onlySearchBook());
-				}else if(search == 3) {
-					System.out.println(bc.onlySearchMagazine());
-				}else if(search == 4) {
-					flag = true;
-				}
+			case 1:	// 조회하기
 				break;
-			
-			case 2:
-				System.out.print("bNo을 입력하세요 : ");
-				String bNo = sc.next();
-				System.out.print("책 제목을 입력하세요 : ");
-				String title = sc.next();
-				System.out.print("작가를 입력하세요 : ");
-				String author = sc.next();
-				System.out.print("출판사를 입력하세요 : ");
-				String publisher = sc.next();
-				System.out.print("가격을 입력하세요 : ");
-				int price = sc.nextInt();
-				sc.nextLine();
-				System.out.print("간단한 설명을 입력하세요 : ");
-				String description = sc.next();
-				System.out.print("일반도서이면 true, 잡지이면 false를 입력하세요 : ");
-				String decision = sc.next().toLowerCase();
-				
-				// 형변환 필요
-				//bc.addBook(bNo);
-				
-				/*
-				if(bs.contains(bNo)) {
-					System.out.println("도서명 : " + title + " 도서는 이미 소장하고 있는 책입니다.");
-				}else {
-					if(decision.equals("true")) {
-						// 일반도서 목록에 추가하는 메소드
-						
-					}else if(decision.equals("false")) {
-						// 잡지 목록에 추가하는 메소드
-					}
-					System.out.println("도서명 : " + title + " 도서가 성공적으로 추가되었습니다.");
-				}
-				*/
+			case 2:	// 추가하기
+				break;
+			case 3:	// 책 찾기
+				break;
+			case 4: // 전체책 가격 합계 및 평균 조회
 				
 				
 				
+				break;
+			case 5: // 프로그램 종료
+				break;
+			default: // 메뉴 다시 받기
+				flag = true;
+				break;
 			}
 			
 		}
+		
 		
 	}
 }

@@ -10,7 +10,7 @@ public class Book {
 	
 	public Book() {}
 
-	// 단축키로 생성해보기(Alt + Shift + S => O)
+	// 단축키로 생성해보기
 	public Book(String bNo, String title, String author, String publisher, int price, String description) {
 		super();
 		this.bNo = bNo;
@@ -21,7 +21,6 @@ public class Book {
 		this.description = description;
 	}
 
-	// Alt + Shift + S => R => Alt + A => Alt + R
 	public String getbNo() {
 		return bNo;
 	}
@@ -70,17 +69,9 @@ public class Book {
 		this.description = description;
 	}
 
-	// Alt + Shift + S => S
 	@Override
 	public String toString() {
 		return "Book [bNo=" + bNo + ", title=" + title + ", author=" + author + ", publisher=" + publisher + ", price="
 				+ price + ", description=" + description + "]";
 	}
-	
-	
-	
-	
-	
-	
-
 }
