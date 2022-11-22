@@ -138,10 +138,26 @@ public class MusicMenu {
 		
 		System.out.println("\n=== 특정 곡 검색 ===");
 		
+		/* 1. 기본버전
 		System.out.print("검색할 곡 명 (키워드만도 가능) : ");
 		String keyword = sc.nextLine();
 		
 		ArrayList<Music> searchList = mc.searchMusic(keyword);				// keyword "At"를 입력받아 보내고, 그 결과로 searchList "Music [title=Attention, artist=뉴진스]"를 받아옴
+		*/
+		
+		// 2. 심화버전
+		System.out.println("1) 제목으로 검색");
+		System.out.println("2) 가수명으로 검색");
+		System.out.print(">> 메뉴 선택 : ");
+		int menu = sc.nextInt();
+		
+		sc.nextLine();
+		
+		System.out.print("검색 키워드 : ");
+		String keyword = sc.nextLine();
+		
+		ArrayList<Music> searchList = mc.searchMusic(menu, keyword);
+		
 		
 		System.out.println("\n=== 검색 결과 ===");
 		
